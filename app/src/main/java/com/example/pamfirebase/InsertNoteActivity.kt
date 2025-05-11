@@ -87,13 +87,15 @@ class InsertNoteActivity : AppCompatActivity(), View.OnClickListener {
                     "Add data",
                     Toast.LENGTH_SHORT
                 ).show()
-            }.addOnFailureListener(this) {
-            Toast.makeText(
-                this@InsertNoteActivity,
-                "Failed to Add data",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
+                startActivity(Intent(this, ListNoteActivity::class.java))
+            }
+            .addOnFailureListener(this) {
+                Toast.makeText(
+                    this@InsertNoteActivity,
+                    "Failed to Add data",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
     }
 
     private fun validateForm(): Boolean {
